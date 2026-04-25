@@ -5,20 +5,29 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Booking;
+<<<<<<< HEAD
 use App\Models\User;
 use App\Models\PointRedeem;
 use Illuminate\Support\Facades\Auth;
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 
 class BookingController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
 
         $bookings = Booking::all();
+=======
+        
+        $bookings = Booking::all(); 
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 
         $latestUpdate = Booking::latest('updated_at')->value('updated_at') ?? now();
 
         $operational_hours = [
+<<<<<<< HEAD
             '08:00',
             '09:00',
             '10:00',
@@ -34,6 +43,11 @@ class BookingController extends Controller
             '20:00',
             '21:00',
             '22:00'
+=======
+            '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', 
+            '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', 
+            '20:00', '21:00', '22:00'
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
         ];
 
         return view('dashboard', compact('bookings', 'operational_hours', 'latestUpdate'));
@@ -49,14 +63,24 @@ class BookingController extends Controller
         ]);
 
         $startTime = Carbon::parse($request->jam_mulai);
+<<<<<<< HEAD
 
         $durasi = (int) $request->durasi;
         $endTime = $startTime->copy()->addHours($durasi);
+=======
+        
+        $durasi = (int) $request->durasi;
+        $endTime = $startTime->copy()->addHours($durasi); 
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 
         $isBooked = Booking::where('id_lapangan', $request->id_lapangan)
             ->where(function ($query) use ($startTime, $endTime) {
                 $query->where('jam_mulai', '<', $endTime->format('H:i:s'))
+<<<<<<< HEAD
                     ->whereRaw('DATE_ADD(jam_mulai, INTERVAL durasi HOUR) > ?', [$startTime->format('H:i:s')]);
+=======
+                      ->whereRaw('DATE_ADD(jam_mulai, INTERVAL durasi HOUR) > ?', [$startTime->format('H:i:s')]);
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
             })->exists();
 
         if ($isBooked) {
@@ -67,6 +91,7 @@ class BookingController extends Controller
 
         return redirect()->back()->with('success', 'Lapangan berhasil dibooking!');
     }
+<<<<<<< HEAD
 
     public function pointsIndex()
     {
@@ -114,3 +139,6 @@ class BookingController extends Controller
         return redirect()->back()->with('success', 'Berhasil menukar poin!');
     }
 }
+=======
+}
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e

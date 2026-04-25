@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Admin - Manajemen Booking & Hadiah</title>
+=======
+    <title>Admin - Manajemen Booking</title>
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -18,7 +22,10 @@
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
             margin-bottom: 30px;
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
         }
 
         .table thead {
@@ -33,6 +40,7 @@
         .btn-delete {
             color: #ef4444;
         }
+<<<<<<< HEAD
 
         /* Style tambahan untuk manajemen hadiah */
         .reward-icon-preview {
@@ -45,11 +53,14 @@
             border-radius: 10px;
             color: #4338ca;
         }
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     </style>
 </head>
 
 <body>
 
+<<<<<<< HEAD
     <div class="container mt-5 pb-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="fw-bold"><i class="bi bi-speedometer2"></i> Dashboard Admin</h2>
@@ -64,11 +75,26 @@
                     </button>
                 </form>
             </div>
+=======
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold"><i class="bi bi-speedometer2"></i> Dashboard Admin</h2>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger shadow-sm">
+                    <i class="bi bi-box-arrow-right"></i> Keluar
+                </button>
+            </form>
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
         </div>
 
         @if(session('success'))
         <div class="alert alert-success border-0 shadow-sm mb-4">
+<<<<<<< HEAD
             <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
+=======
+            {{ session('success') }}
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
         </div>
         @endif
 
@@ -93,11 +119,23 @@
                             <td class="fw-bold">{{ $item->nama_pemesan }}</td>
                             <td>
                                 @if($item->id_lapangan == 1)
+<<<<<<< HEAD
                                 <span class="badge bg-info text-dark">Lapangan 1 (Sintetis)</span>
                                 @elseif($item->id_lapangan == 2)
                                 <span class="badge bg-success">Lapangan 2 (Vinyl)</span>
                                 @else
                                 <span class="badge bg-secondary">Lapangan {{ $item->id_lapangan }}</span>
+=======
+                                <span class="badge bg-info text-dark">
+                                    <i class="bi bi-square-fill me-1"></i> Lapangan 1 (Sintetis)
+                                </span>
+                                @elseif($item->id_lapangan == 2)
+                                <span class="badge bg-success">
+                                    <i class="bi bi-square-fill me-1"></i> Lapangan 2 (Vinyl)
+                                </span>
+                                @else
+                                <span class="badge bg-secondary">Lapangan {{ $item->field_id }}</span>
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
                                 @endif
                             </td>
                             <td><i class="bi bi-clock me-1"></i> {{ $item->jam_mulai }}</td>
@@ -107,6 +145,10 @@
                                     <a href="{{ route('admin.booking.edit', $item->id) }}" class="btn btn-light btn-sm border">
                                         <i class="bi bi-pencil-square text-warning"></i>
                                     </a>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
                                     <form action="{{ route('admin.booking.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                                         @csrf
                                         @method('DELETE')
@@ -126,6 +168,7 @@
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
 
         <div class="admin-card">
             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -225,6 +268,8 @@
                 </div>
             </form>
         </div>
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

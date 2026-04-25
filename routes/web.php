@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AdminController;
+<<<<<<< HEAD
 use App\Http\Controllers\RewardController;
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 //use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,10 +22,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Proses Simpan Booking
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+<<<<<<< HEAD
 
     Route::get('/point', [BookingController::class, 'pointsIndex'])->name('point');
 
     Route::post('/points/redeem', [BookingController::class, 'redeem'])->name('points.redeem');
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -30,10 +36,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Halaman Management (Tabel semua booking)
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
+<<<<<<< HEAD
     Route::post('/rewards', [RewardController::class, 'store'])->name('rewards.store');
 
     Route::resource('rewards', RewardController::class);
 
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     // Fitur Edit
     Route::get('/booking/{id}/edit', [AdminController::class, 'edit'])->name('booking.edit');
     Route::put('/booking/{id}', [AdminController::class, 'update'])->name('booking.update');

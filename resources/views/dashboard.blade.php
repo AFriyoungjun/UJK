@@ -180,6 +180,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="d-flex flex-column align-items-end gap-2">
                     <div class="member-points">
                         <i class="bi bi-star-fill text-warning"></i>
@@ -189,6 +190,11 @@
                     <a href="{{ route('point') }}" class="btn btn-sm btn-outline-primary" style="font-size: 0.7rem; border-radius: 50px;">
                         <i class="bi bi-gift"></i> Tukar Koin
                     </a>
+=======
+                <div class="member-points">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>450 Poin</span>
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
                 </div>
             </div>
             <div class="text-center mb-5">

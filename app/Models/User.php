@@ -22,7 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+<<<<<<< HEAD
         'points',
+=======
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     ];
 
     /**

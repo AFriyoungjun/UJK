@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+<<<<<<< HEAD
 use App\Models\Rewards;
+=======
+use App\Models\Field; // Asumsi Anda punya model Field
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,10 +16,14 @@ class AdminController extends Controller
     public function index()
     {
         $bookings = Booking::with('user')->orderBy('jam_mulai', 'asc')->get();
+<<<<<<< HEAD
 
         $rewards = Rewards::all();
 
         return view('admin.dashboard', compact('bookings', 'rewards'));
+=======
+        return view('admin.dashboard', compact('bookings'));
+>>>>>>> fab1a56f7cc4cff3da7bbc49836c65706ffc2b9e
     }
 
     // 2. Menampilkan form untuk edit jadwal (EDIT)
